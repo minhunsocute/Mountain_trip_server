@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:mountain_trip_server/widgets/TextFormFieldDesign.dart';
 
 import '../../misc/colors.dart';
+import '../mainPages/mainPages.dart';
 
 class LogIn_pages extends StatelessWidget {
   const LogIn_pages({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class LogIn_pages extends StatelessWidget {
             height: double.infinity,
             decoration: BoxDecoration(
               image: DecorationImage(
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 image: AssetImage('assets/img/minhhung201102.png'),
               ),
             ),
@@ -50,7 +51,7 @@ class LogIn_pages extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black38.withOpacity(0.1),
@@ -98,7 +99,14 @@ class LogIn_pages extends StatelessWidget {
                       ),
                       const SizedBox(height: 40),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MainPages(),
+                            ),
+                          );
+                        },
                         child: Container(
                           width: double.infinity,
                           height: 50,
